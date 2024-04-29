@@ -25,3 +25,9 @@ spec:
         repoURL: https://github.com/argoproj/argocd-example-apps.git
         targetRevision: {{ .Values.example_apps.targetRevision }}
         path: helm-guestbook
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - Validate=true
